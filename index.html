@@ -1,0 +1,273 @@
+<html>
+  <head>
+    <title>React.js Talk</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Fira+Mono' rel='stylesheet' type='text/css'>
+    <style type="text/css">
+      body {
+        font-family: 'Open Sans', sans-serif;
+      }
+      h1, h2, h3 {
+        font-family: 'Roboto Slab', serif;
+        font-weight: 700;
+      }
+      a {
+        color: #00bdd6;
+        text-decoration: none;
+      }
+      li {
+        margin: 8px 0;
+      }
+      .remark-code,
+      .remark-inline-code {
+        font-family: 'Fira Mono', monospace;
+      }
+      .remark-inline-code {
+        color: #b21c1c;
+      }
+      .hljs-default .hljs {
+        font-size: 14px;
+        padding: 15px 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+
+class: center, middle
+
+![js](javascript.png)
+# Javascript
+
+In 10 minutes.
+
+---
+
+# What is JavaScript
+
+- The most popular programming language in the world.
+- Created by Brendan Eich from Netscape in 1995.
+- Most commonly used on the web to allow user interaction on web pages.
+- Dynamically typed, object oriented language.
+- Can now be run on a server with tools like Node.js.
+- It is not related, other than by name, to the Java language.
+- Inspired by languages like C, Self and Scheme
+
+---
+
+# What does it look like?
+
+```js
+var person = 'Jessica Rabbit';
+
+function sayHello(name) {
+  alert('Hello ' + name);
+}
+
+sayHello(person);
+```
+
+---
+
+class: center, middle
+
+# Language features
+
+A brief dive into the features of JavaScript
+
+---
+
+# Comments:
+
+- Used to document your code.
+- Also commonly used to "comment out" temporarily unused code.
+
+```js
+// This is a single line comment.
+
+/*
+  This is a multi-line comment.
+  I can put as much content in here as I want!
+ */
+```
+
+---
+
+# Variables
+
+Basic variable definitions:
+
+```js
+var name; // Define, but with no value (e.g. undefined)
+
+var isPerson = true; // Define with value.
+```
+
+You can define any type to a variable:
+
+```js
+var fruit = ['apples', 'oranges', 'bananas'];
+
+var product = {
+  name: 'MacBook Pro',
+  size: 15, // in inches
+  price: 250099, // in cents
+};
+
+var doSomething = function () {
+  // Do something here...
+};
+```
+
+---
+
+# Numbers
+
+JavaScript does not have integers and floats, only numbers. So both `23` and `6.789` are numbers in JavaScript.
+
+```js
+var num = 982.123;
+```
+
+You can turn strings into numbers:
+
+```js
+Number('34.6') // returns 34.6
+```
+
+JavaScript has a built in [math library](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math):
+
+```js
+Math.PI // 3.14159....
+```
+
+[Learn more here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)
+
+---
+
+# Booleans
+
+Booleans represent `true` or `false` values.
+
+```js
+var isTrue = true;
+var isFalse = false;
+```
+
+JavaScript is "loosly typed" which means other types can be treated as booleans:
+
+- Any number other than `0` is considered `true`, where `0` is `false`.
+- An empty string, array or object is considered `false`, ones with content are `true`.
+
+You can check the equality of values with
+```js
+// Check if values are the same:
+'0' == false    // true
+'0' === false   // false
+'' == false     // true
+'' === false    // false
+```
+
+---
+
+# Arrays
+
+Arrays are lists of any kind of data and are orded by an "index".
+
+```js
+var everything = [
+  'a string',
+  4.87, // number
+  true, // boolean
+  ['a', 'b'], // array
+  { name: 'Bob' }, // object
+  function () { /* ... */ } // function
+];
+```
+
+---
+
+# Arrays, continued...
+
+Using an array is easy:
+
+```js
+var arr = ['cat', 'dog', 'horse', 'monkey'];
+
+arr.length         // returns 4
+arr[0]             // the first item in the array
+arr[-1]            // the last item in the array
+arr.pop()          // removes the last element and returns it (e.g. 'horse')
+arr.push('rabbit') // puts a new item at the end of the array
+arr.shift()        // removes the first element and returns it (e.g. 'cat')
+arr.indexOf('dog') // returns the items index, or -1
+
+// Do something for each item in the array:
+arr.forEach(function (animal, index) {
+  console.log('Animal', index, 'is a', animal); // 'Animal 1 is a cat'
+});
+// Also check out: forEach, map, reduce, filter, find etc....
+```
+
+[Learn more here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array).
+
+---
+
+# Objects
+
+Objects are like arrays but instead of an index, they have keys and values and have no particular order.
+
+*Also known as an hash, map or dictionary.*
+
+```js
+var obj = {
+  type: 'fruit',
+  name: 'Apple',
+  weight: 1.2,
+  inStock: true
+};
+```
+
+Working with objects:
+
+```js
+obj['type'] // returns fruit
+// or...
+obj.type
+```
+
+[Learn more here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
+
+---
+
+# Going further
+
+- Start writing JavaScript!
+- Utilties like underscore, lodash
+- Libraries like jQuery, React, Bootstrap, etc...
+- Learn about testing JavaScript (mocha, should.js, sinon, etc...)
+- Write backend code with Node.js or io.js
+
+---
+
+class: center, middle
+
+# Thanks!
+
+Dana Woodman
+
+[dana@danawoodman.com](mailto:dana@danawoodman.com)
+
+<http://danawoodman.com>
+
+
+    </textarea>
+    <script src="http://gnab.github.io/remark/downloads/remark-latest.min.js" type="text/javascript">
+    </script>
+    <script type="text/javascript">
+      var slideshow = remark.create();
+    </script>
+  </body>
+</html>
